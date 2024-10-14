@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from modules.download_amazon import download_nc_files
 from modules.dirs import get_dirs
 from modules.logs import conf_log, finalize_log_time
-from modules.remove import remover_imagens, remover_ndvi
+from modules.remove import remover_imagens
 from modules.fdcf import process_fdcf
 
 os.environ['PROJ_LIB'] = '/opt/conda/envs/goes/share/proj'
@@ -87,9 +87,9 @@ if __name__ == "__main__":
         new_products = open_json(dir_main)
         logging.info(new_products)
         init_process_fdcf(new_products, extent, dir_out, date_now, dir_dates, dir_products)
-        # remover_imagens(bands, dir_in, dir_main)
+        remover_imagens(bands, dir_in, dir_main)
     else:
-        # remover_imagens(bands, dir_in, dir_main)
+        remover_imagens(bands, dir_in, dir_main)
         logging.info(f'Sem imagens para fdcf')
     
     logging.info(f'')

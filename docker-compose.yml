@@ -3,5 +3,6 @@ services:
     build: ./goes2image
     container_name: goes-fdcf-labsat
     volumes:
-      - C:/Users/Gui/OneDrive/Documentos/labsat-fdcf/goes2image/products:/home/cpaunicamp/goes2image/products/
-      - C:/Users/Gui/OneDrive/Documentos/labsat-fdcf/goes2image/logs:/home/cpaunicamp/goes2image/logs/
+      - /var/log/goes:/home/cpaunicamp/goes2image/logs/
+      - /var/products:/home/cpaunicamp/goes2image/products/
+      - /dates:/home/cpaunicamp/goes2image/dates/ 
