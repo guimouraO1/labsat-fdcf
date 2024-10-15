@@ -8,6 +8,7 @@ from modules.dirs import get_dirs
 from modules.logs import conf_log, finalize_log_time
 from modules.remove import remover_imagens
 from modules.fdcf import process_fdcf
+import shutil
 
 os.environ['PROJ_LIB'] = '/opt/conda/envs/goes/share/proj'
 
